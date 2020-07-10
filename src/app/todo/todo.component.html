@@ -1,0 +1,20 @@
+
+<div class="todo">
+  <input type="text " class="textfield" [(ngModel)]="name1" (keyup.enter)="addvalue(textValue.value)" (blur)="addvalue(textValue.value)" #textValue>
+  <button (click)="addvalue(textValue.value)">Add</button>
+
+  <ul>
+    <h4> todo list</h4>
+    <li *ngFor="let item of items" class="listbox">
+      <input type="checkbox" class="checkbox" [{ngModel}]="item.selected" (change)="item.selected = !item.selected">
+      <span (click)="edit(item)" *ngIf="!item.editing; else editstart"  > {{item.name | uppercase}} </span>
+      <ng-template #editstart>
+          <input class="text" [(ngModel)]='item.name' (blur)="done_edit(item)" (keyup.enter)="done_edit(item)">
+      </ng-template>
+    
+      <button (click)="removevalue(item.name)">delete</button>
+    </li>
+  </ul>
+  <button (click)="deleteSelected()">delete selected</button>
+
+</div>

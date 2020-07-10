@@ -1,0 +1,24 @@
+*{
+    border-style: border-box;
+}
+.todo{
+ margin: auto;
+    max-width: 300px;;
+}
+ul{
+    padding: 0;
+}
+.listbox{
+    display: flex ;
+     justify-content: space-between;
+     padding : 0 9px;input{
+    margin-bottom: 12px;
+     }
+     span{
+        margin-bottom: 12px;
+     }
+     button{
+        margin-bottom: 12px;
+     }
+}
+
